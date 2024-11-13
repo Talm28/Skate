@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PenguinCollision : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        ICollidable coliderObject = other.GetComponent<ICollidable>();
+        ICollidable coliderObject = other.gameObject.GetComponent<ICollidable>();
         if(coliderObject == null) return;
         coliderObject.Collide();
+        Destroy(other.gameObject);
     }
 }
