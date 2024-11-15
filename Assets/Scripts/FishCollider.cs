@@ -6,6 +6,6 @@ public class FishCollider : MonoBehaviour, ICollidable
 {
     public void Collide()
     {
-        Debug.Log("Fish collected!");
+        EventsController.Instance.scoreCollected.Invoke();
     }
 }

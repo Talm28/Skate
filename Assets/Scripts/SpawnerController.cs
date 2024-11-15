@@ -11,20 +11,23 @@ public class SpawnerController : MonoBehaviour
 
     private float _timer;
     private System.Random _random;
+    private float _timeToSpawn;
 
     // Start is called before the first frame update
     void Start()
     {
         _timer = 0;
         _random = new System.Random();
+        _timeToSpawn = 1f;
     }
 
     // Update is called once per frame
     void Update()
     {
         _timer += Time.deltaTime;
-        if (_timer > 1)
+        if (_timer > _timeToSpawn)
         {
+            _timeToSpawn = Random.Range(0.75f, 1.25f);
             _timer = 0;
             SpawnObsticles();
         }
@@ -47,8 +50,7 @@ public class SpawnerController : MonoBehaviour
         }
         else // Choose to spawn snow ball
         {
-            if(_random.Next(0,2) == 0)
-                Instantiate(_Obsticles[_random.Next(0,_Obsticles.Length)], _lowSpawnerLocation.position, Quaternion.identity);
+            Instantiate(_Obsticles[_random.Next(0,_Obsticles.Length)], _lowSpawnerLocation.position, Quaternion.identity);
         }
     }
 }

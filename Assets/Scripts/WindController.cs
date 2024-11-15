@@ -37,8 +37,12 @@ public class WindController : MonoBehaviour
 
     private void SpeedUpWind()
     {
-        windSpeed += 0.1f;
-        var main = _particleSystem.main;
-        main.startSpeed = windSpeed;
+        if(windSpeed < 30)
+        {
+            windSpeed += 0.1f;
+            var main = _particleSystem.main;
+            main.startSpeed = windSpeed;
+        }
+        
     }
 }

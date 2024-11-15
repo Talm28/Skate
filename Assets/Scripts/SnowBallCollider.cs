@@ -6,6 +6,6 @@ public class SnowBallCollider : MonoBehaviour, ICollidable
 {
     public void Collide()
     {
-        Debug.Log("Collide a snowball!");
+        EventsController.Instance.playerDamaged.Invoke();
     }
 }
