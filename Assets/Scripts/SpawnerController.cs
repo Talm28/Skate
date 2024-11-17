@@ -12,6 +12,7 @@ public class SpawnerController : MonoBehaviour
     private float _timer;
     private System.Random _random;
     private float _timeToSpawn;
+    private bool _isSpawning;
 
     // Start is called before the first frame update
     void Start()
@@ -19,10 +20,19 @@ public class SpawnerController : MonoBehaviour
         _timer = 0;
         _random = new System.Random();
         _timeToSpawn = 1f;
+        _isSpawning = true;
+
+        EventsController.Instance.gameOver.AddListener(DisableSpawner);
     }
 
     // Update is called once per frame
     void Update()
+    {
+        if(_isSpawning)
+            UpdateTimer();
+    }
+    
+    private void UpdateTimer()
     {
         _timer += Time.deltaTime;
         if (_timer > _timeToSpawn)
@@ -52,5 +62,10 @@ public class SpawnerController : MonoBehaviour
         {
             Instantiate(_Obsticles[_random.Next(0,_Obsticles.Length)], _lowSpawnerLocation.position, Quaternion.identity);
         }
+    }
+
+    public void DisableSpawner()
+    {
+        _isSpawning = false;
     }
 }

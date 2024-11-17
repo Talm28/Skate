@@ -4,21 +4,35 @@ using UnityEngine;
 
 public class ObsticleMovement : MonoBehaviour
 {
-    private float _windSpeed;
+    public float WindSpeed{get; private set;}
 
     // Start is called before the first frame update
     void Start()
     {
-        _windSpeed = GameObject.FindGameObjectWithTag("Wind").GetComponent<WindController>().windSpeed;
+        WindSpeed = GameObject.FindGameObjectWithTag("Wind").GetComponent<WindController>().windSpeed;
+    }
+
+    void OnEnable()
+    {
+        EventsController.Instance.gameOver.AddListener(DeleteObsticle);
+    }
+    void OnDisable() 
+    {
+        EventsController.Instance.gameOver.RemoveListener(DeleteObsticle);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position -= new Vector3(Time.deltaTime * _windSpeed, 0, 0);
+        transform.position -= new Vector3(Time.deltaTime * WindSpeed, 0, 0);
     }
 
     void OnBecameInvisible()
+    {
+        Destroy(this.gameObject);
+    }
+
+    public void DeleteObsticle()
     {
         Destroy(this.gameObject);
     }

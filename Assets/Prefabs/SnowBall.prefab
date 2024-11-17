@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -3297847978382357722}
   - component: {fileID: 920773235043424410}
   - component: {fileID: 8123421682881815957}
+  - component: {fileID: -4702078639657057953}
   m_Layer: 0
   m_Name: SnowBall
   m_TagString: SnowBall
@@ -122,7 +123,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.45
+  m_Radius: 0.42
 --- !u!50 &-3297847978382357722
 Rigidbody2D:
   serializedVersion: 4
@@ -174,3 +175,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6732d28391282149ae21f85b95dd1b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4702078639657057953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5781356843639842183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775a6d4f4a19aef4e804512466278f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _RotationSpeedFactor: 25
