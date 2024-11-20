@@ -9,10 +9,12 @@ public class PenguinMovement : MonoBehaviour
     [SerializeField] private int _jumpAmount;
 
     private Rigidbody2D _rb;
+    private Animator _animator;
     private int _currJumpAmout;
 
     private void Awake() {
         _rb = GetComponent<Rigidbody2D>(); 
+        _animator = GetComponent<Animator>();
     }
 
     private void Start() {
@@ -27,6 +29,8 @@ public class PenguinMovement : MonoBehaviour
             // Reset rigidbody velocity
             _rb.velocity = Vector2.zero;
             _rb.AddForce(new Vector2(0,_jumpPower));
+
+            _animator.SetBool("IsJump", true);
         }
         
     }
@@ -35,6 +39,10 @@ public class PenguinMovement : MonoBehaviour
     {
         // If the penguin hit the floor reset the jumps number
         if(other.gameObject.tag == "Floor")
+        {
             _currJumpAmout = _jumpAmount;
+
+            _animator.SetBool("IsJump", false);
+        }
     }
 }

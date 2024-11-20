@@ -11,6 +11,7 @@ public class TouchManager : MonoBehaviour
     private InputAction _touchPress;
 
     private void Awake() {
+        _penguinMovement = GetComponent<PenguinMovement>();
         _playerInput = GetComponent<PlayerInput>();
         _touchPress = _playerInput.actions["TouchPress"];
         
