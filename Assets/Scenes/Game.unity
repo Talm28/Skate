@@ -7056,6 +7056,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1554506091238800192, guid: 1354f4ca1cd1c4040b8fbf74a00b2a55, type: 3}
+      propertyPath: m_Size.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554506091238800192, guid: 1354f4ca1cd1c4040b8fbf74a00b2a55, type: 3}
+      propertyPath: m_Size.y
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554506091238800192, guid: 1354f4ca1cd1c4040b8fbf74a00b2a55, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554506091238800192, guid: 1354f4ca1cd1c4040b8fbf74a00b2a55, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1708818361375746230, guid: 1354f4ca1cd1c4040b8fbf74a00b2a55, type: 3}
       propertyPath: m_Name
       value: Penguin

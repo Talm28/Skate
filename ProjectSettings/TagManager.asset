@@ -8,6 +8,7 @@ TagManager:
   - Wind
   - SnowBall
   - Fish
+  - Store manager
   layers:
   - Default
   - TransparentFX

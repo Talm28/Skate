@@ -12,6 +12,7 @@ public class ScoreUIController : MonoBehaviour
     private void Start() {
         _scoreText = GetComponent<TextMeshProUGUI>();
         EventsController.Instance.scoreCollected.AddListener(AddScore);
+        EventsController.Instance.gameOver.AddListener(SaveScore);
 
         Score = 0;
         UpdateScoreText();
@@ -26,5 +27,11 @@ public class ScoreUIController : MonoBehaviour
     private void UpdateScoreText()
     {
         _scoreText.text = Score.ToString();
+    }
+
+    public void SaveScore()
+    {
+        int totalScore = PlayerPrefs.GetInt("Money", 0);
+        PlayerPrefs.SetInt("Money", totalScore + Score);
     }
 }

@@ -17,13 +17,13 @@ public class Item
     public Sprite Sprite {get; private set;}
     public int Cost {get; private set;}
 
-    public Item(int id, ItemType type, string name, Sprite sprite, int cost)
+    public Item(int id, ItemType type, string name, int cost, Sprite sprite) 
     {
         Id = id;
         Type = type;
         Name = name;
-        Sprite = sprite;
         Cost = cost;
+        Sprite = sprite;
     }
 
 }
