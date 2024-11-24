@@ -9,6 +9,7 @@ public class PenguinHealth : MonoBehaviour
     [SerializeField] private int _startHealth;
     
     private EventsController eventsController;
+    private SpriteRenderer[] _penguinSprites;
 
     // Start is called before the first frame update
     void Start()
@@ -17,13 +18,25 @@ public class PenguinHealth : MonoBehaviour
         
         eventsController = EventsController.Instance;
         eventsController.playerDamaged.AddListener(TakeHealth);
+
+        _penguinSprites = GetComponentsInChildren<SpriteRenderer>();
     }
 
 
     public void TakeHealth()
     {
         Health--;
+        StartCoroutine(FlashRed());
         if( Health == 0 )
             eventsController.gameOver.Invoke();
+    }
+
+    private IEnumerator FlashRed()
+    {
+        foreach(SpriteRenderer sprite in _penguinSprites)
+            sprite.color = Color.red;
+        yield return new WaitForSeconds(0.2f);
+        foreach(SpriteRenderer sprite in _penguinSprites)
+            sprite.color = Color.white;
     }
 }
