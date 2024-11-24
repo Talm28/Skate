@@ -26,15 +26,20 @@ public static class ItemsList
     };
     public static List<Item> Gloves = new List<Item>()
     {
-        new Item(0, ItemType.Glove, "Gloves_empty", 15, Resources.Load<Sprite>("Items/Gloves/penguin_jump_arm")),
-        new Item(1, ItemType.Glove, "Blue_mittens", 15, Resources.Load<Sprite>("Items/Gloves/Blue_mittens")),
-        new Item(2, ItemType.Glove, "Pink_mittens", 15, Resources.Load<Sprite>("Items/Gloves/Pink_mittens")),
-        new Item(3, ItemType.Glove, "Red_mittens", 15, Resources.Load<Sprite>("Items/Gloves/Red_mittens")),
-        new Item(4, ItemType.Glove, "Boxing_gloves", 15, Resources.Load<Sprite>("Items/Gloves/Boxing_gloves"))
+        new Item(0, ItemType.Glove, "Gloves_empty", 1, Resources.Load<Sprite>("Items/Gloves/penguin_jump_arm")),
+        new Item(1, ItemType.Glove, "Blue_mittens", 1, Resources.Load<Sprite>("Items/Gloves/Blue_mittens")),
+        new Item(2, ItemType.Glove, "Pink_mittens", 1, Resources.Load<Sprite>("Items/Gloves/Pink_mittens")),
+        new Item(3, ItemType.Glove, "Red_mittens", 1, Resources.Load<Sprite>("Items/Gloves/Red_mittens")),
+        new Item(4, ItemType.Glove, "Boxing_gloves", 1, Resources.Load<Sprite>("Items/Gloves/Boxing_gloves")),
+        new Item(5, ItemType.Glove, "White_gloves", 1, Resources.Load<Sprite>("Items/Gloves/White_gloves")),
+        new Item(6, ItemType.Glove, "Medical_gloves", 1, Resources.Load<Sprite>("Items/Gloves/Medical_gloves"))
     };
     public static List<Item> Shoes = new List<Item>()
     {
-        new Item(0, ItemType.Glove, "Shoes_empty", 15, Resources.Load<Sprite>("Items/Shoes/penguin_jump_leg"))
+        new Item(0, ItemType.Glove, "Shoes_empty", 0, Resources.Load<Sprite>("Items/Shoes/penguin_jump_leg")),
+        new Item(1, ItemType.Shoe, "Shoes_blue", 1, Resources.Load<Sprite>("Items/Shoes/Shoes_blue")),
+        new Item(2, ItemType.Shoe, "Shoes_red", 1, Resources.Load<Sprite>("Items/Shoes/Shoes_red")),
+        new Item(3, ItemType.Shoe, "Shoes_green", 1, Resources.Load<Sprite>("Items/Shoes/Shoes_green")),
     };
 
     public static Item GetItemByName(string name)
