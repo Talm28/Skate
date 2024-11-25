@@ -37,7 +37,7 @@ public class SpawnerController : MonoBehaviour
         _timer += Time.deltaTime;
         if (_timer > _timeToSpawn)
         {
-            _timeToSpawn = Random.Range(0.75f, 1.25f);
+            _timeToSpawn = Random.Range(0.8f, 1.25f);
             _timer = 0;
             SpawnObsticles();
         }

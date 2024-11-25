@@ -5,24 +5,18 @@ using UnityEngine;
 public class BgMovement : MonoBehaviour
 {
     [SerializeField] private float _speedFactor;
-    private Vector3 _nextPosition = new Vector3(33, 0, 0);
 
-    public float WindSpeed{get; private set;}
+    private float _windSpeed;
+    private Renderer _bgREnderer;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start() 
     {
-        WindSpeed = GameObject.FindGameObjectWithTag("Wind").GetComponent<WindController>().windSpeed;
+        _bgREnderer = GetComponent<Renderer>();
+        _windSpeed = GameObject.FindGameObjectWithTag("Wind").GetComponent<WindController>().windSpeed;
     }
-
     // Update is called once per frame
     void Update()
     {
-        transform.position -= new Vector3(Time.deltaTime * WindSpeed * _speedFactor, 0, 0);
-    }
-
-    void OnBecameInvisible()
-    {
-        transform.position = _nextPosition;
+        _bgREnderer.material.mainTextureOffset += new Vector2(_windSpeed * _speedFactor * Time.deltaTime, 0);
     }
 }
