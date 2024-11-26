@@ -7,15 +7,19 @@ public class PenguinHealth : MonoBehaviour
     public int Health{ get; private set; }
 
     [SerializeField] private int _startHealth;
+    [SerializeField] private HeartsUIController _heartUIController;
     
     private EventsController eventsController;
     private SpriteRenderer[] _penguinSprites;
 
+    void Awake() 
+    {
+        Health = _startHealth;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        Health = _startHealth;
-        
         eventsController = EventsController.Instance;
         eventsController.playerDamaged.AddListener(TakeHealth);
 
@@ -29,6 +33,7 @@ public class PenguinHealth : MonoBehaviour
         StartCoroutine(FlashRed());
         if( Health == 0 )
             eventsController.gameOver.Invoke();
+        _heartUIController.UpdateHealthBar();
     }
 
     private IEnumerator FlashRed()

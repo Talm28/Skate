@@ -7287,6 +7287,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Penguin
       objectReference: {fileID: 0}
+    - target: {fileID: 4868579023241633892, guid: 1354f4ca1cd1c4040b8fbf74a00b2a55, type: 3}
+      propertyPath: _heartUIController
+      value: 
+      objectReference: {fileID: 1570320447}
     - target: {fileID: 6211669408657723186, guid: 1354f4ca1cd1c4040b8fbf74a00b2a55, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6

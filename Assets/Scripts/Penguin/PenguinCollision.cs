@@ -11,4 +11,12 @@ public class PenguinCollision : MonoBehaviour
         coliderObject.Collide();
         Destroy(other.gameObject);
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        ICollidable coliderObject = other.gameObject.GetComponent<ICollidable>();
+        if(coliderObject == null) return;
+        coliderObject.Collide();
+        Destroy(other.gameObject);
+    }
 }

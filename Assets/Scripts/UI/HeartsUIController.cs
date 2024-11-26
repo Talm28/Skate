@@ -11,7 +11,6 @@ public class HeartsUIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EventsController.Instance.playerDamaged.AddListener(UpdateHealthBar);
         UpdateHealthBar();
     }
 
